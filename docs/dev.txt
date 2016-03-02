@@ -1,0 +1,8 @@
+========================
+Development informations
+========================
+
+This package uses some butler libraries for list management. Doing this allow the butler to store the data wherever it wants (database, files,...) and the package will not have to focus on data storage but only to the list management.
+
+
+

@@ -1,0 +1,39 @@
+> object shopping python
+    from domogik_packages.brain_shopping.lib.shopping import shopping
+
+    cfg_i18n = {"OK" : u"OK",
+                "EMPTY_LIST" : u"Il n'y a rien dans la liste",
+                "ERRORS" : {"ALREADY_IN_LIST" : "deja dans la liste",
+                            "NOT_IN_LIST" : "pas dans la liste"
+                           }
+               }
+    return shopping(args, cfg_i18n, rs.log)
+
+< object
+
+// ##feature## gérer la liste des courses
+
++ shopping add *
+- <call>shopping add <star1></call>
+
++ shopping remove *
+- <call>shopping remove <star1></call>
+
++ shopping get
+- <call>shopping get</call>
+
++ shopping clean
+- <call>shopping clean</call>
+
++ ajoute * a la liste des courses
+@ shopping add <star1>
+
++ retire * de la liste des courses
+@ shopping remove <star1>
+
++ @donneMoi la liste des courses
+@ shopping get
+
++ vide la liste des courses
+@ shopping clean
+

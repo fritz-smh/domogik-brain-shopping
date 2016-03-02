@@ -1,0 +1,27 @@
+.. _index:
+
+==============
+Brain shopping
+==============
+
+Purpose
+=======
+
+The **shopping** brain package allows to manage a shopping list : add and remove items, clean the list, get the list.
+
+Dependencies
+============
+
+There is no dependency.
+
+Brain configuration
+===================
+
+There is no configuration option for this package.
+
+How can I see the this brain package allow me to do ?
+=====================================================
+
+In Domogik administration, just go on the corresponding client and look at the **Brain details** page.
+
+

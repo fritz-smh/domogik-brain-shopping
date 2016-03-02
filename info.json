@@ -1,0 +1,21 @@
+{ 
+    "configuration": [],
+    "products": [],
+    "commands": {},
+    "xpl_commands": {}, 
+    "sensors": {},
+    "xpl_stats": {},
+    "device_types": {},
+    "identity": {
+        "author": "Fritz", 
+        "author_email": "fritz.smh at gmail.com", 
+        "tags": ["butler"], 
+        "dependencies": [], 
+        "description": "Butler shopping functions. This package will help you to manage your shopping list.",
+        "domogik_min_version": "0.5.0", 
+        "name": "shopping", 
+        "type": "brain", 
+        "version": "1.0"
+    }, 
+    "json_version": 2
+}
