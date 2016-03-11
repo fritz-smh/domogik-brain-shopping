@@ -25,15 +25,15 @@
 + shopping clean
 - <call>shopping clean</call>
 
-+ ajoute * a la liste des courses
++ ajoute * a la liste [de|des] courses
 @ shopping add <star1>
 
-+ retire * de la liste des courses
++ retire * de la liste [de|des] courses
 @ shopping remove <star1>
 
-+ @donneMoi la liste des courses
++ @donneMoi la liste [de|des] courses
 @ shopping get
 
-+ vide la liste des courses
++ vide la liste [de|des] courses
 @ shopping clean
 
