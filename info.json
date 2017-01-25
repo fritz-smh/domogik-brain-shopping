@@ -15,7 +15,7 @@
         "domogik_min_version": "0.5.2", 
         "name": "shopping", 
         "type": "brain", 
-        "version": "1.1"
+        "version": "1.1" 
     }, 
     "json_version": 2
 }
