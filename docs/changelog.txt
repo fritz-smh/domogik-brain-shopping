@@ -2,6 +2,12 @@
 Changelog
 =========
 
+1.1
+===
+
+* This release needs Domogik 0.5.2 at least!
+* Improve the fr_FR language
+
 1.0
 ===
 

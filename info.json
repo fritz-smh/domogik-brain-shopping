@@ -12,10 +12,10 @@
         "tags": ["butler"], 
         "dependencies": [], 
         "description": "Butler shopping functions. This package will help you to manage your shopping list.",
-        "domogik_min_version": "0.5.0", 
+        "domogik_min_version": "0.5.2", 
         "name": "shopping", 
         "type": "brain", 
-        "version": "1.0"
+        "version": "1.1"
     }, 
     "json_version": 2
 }
