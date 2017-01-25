@@ -3,8 +3,9 @@
 
     cfg_i18n = {"OK" : u"OK",
                 "EMPTY_LIST" : u"Il n'y a rien dans la liste",
-                "ERRORS" : {"ALREADY_IN_LIST" : "deja dans la liste",
-                            "NOT_IN_LIST" : "pas dans la liste"
+                "ERRORS" : {"ALREADY_IN_LIST" : "C'est déja dans la liste",
+                            "NOT_IN_LIST" : "Ce n'est pas dans la liste",
+                            "PRINTING_ERROR" : "Erreur lors de l'impression"
                            }
                }
     return shopping(args, cfg_i18n, rs.log)
@@ -12,6 +13,8 @@
 < object
 
 // ##feature## gérer la liste des courses
+
+! array mettre=met|mets|mettez|mettre
 
 + shopping add *
 - <call>shopping add <star1></call>
@@ -25,15 +28,56 @@
 + shopping clean
 - <call>shopping clean</call>
 
-+ ajoute * a la liste des courses
-@ shopping add <star1>
++ shopping print *
+- <call>shopping print <star></call>
 
-+ retire * de la liste des courses
-@ shopping remove <star1>
++ (@mettre) * (a|dans|sur) la liste de@s course@s
+@ shopping add <star2>
 
-+ @donneMoi la liste des courses
++ (ajoute|rajoute)@premierGroupe * (a|dans|sur) la liste de@s course@s
+@ shopping add <star2>
+
++ (retire|enleve|supprime)@premierGroupe * (a|de|sur) la liste de@s course@s
+@ shopping remove <star2>
+
++ @donneMoi la liste de@s course@s
 @ shopping get
 
-+ vide la liste des courses
++ (vide|supprime)@premierGroupe la liste de@s course@s
 @ shopping clean
 
++ (imprime)@premierGroupe la liste de@s course@s
+@ shopping print Liste des courses
+
+
+// ********************** Topic ************************
+// Un topic est un mode de conversation fermé.
+// Une fois rentré dans le mode topic ici, tout ce qui sera dit sera ajouté (sauf exception) à la liste des courses.
+// Pour sortir, il faudra dire qu'on a finit.
+// Comme dans tous les topics, une phrase avec le mot 'aide' dedans dira comment sortir
+
++ ouvre@premierGroupe la liste de@s course@s
+- Pour clôturer la liste des courses, il faut dire merci. {topic=shopping}
+
+> topic shopping
+    + [*] aide [*]
+    - Pour clôturer la liste des courses, il faut dire merci.
+
+    + (merci|j ai fini|c est fini|c est tout)
+    - Je clos la liste des courses. {topic=random}
+
+    + * 
+    - <call>shopping add <star1></call>   
+
+    + (ajoute|rajoute)@premierGroupe * 
+    - <call>shopping add <star2></call>
+
+    + (retire|enleve|supprime)@premierGroupe * 
+    - <call>shopping remove <star2></call>
+
+    + @donneMoi la liste [de@s course@s]
+    - <call>shopping get</call>
+
+
+
+< shopping

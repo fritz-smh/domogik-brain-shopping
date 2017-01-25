@@ -5,6 +5,7 @@ def shopping(args, cfg_i18n, log):
                       1... : data
     """
     from domogik.butler.list import ItemList
+    from domogik.butler.printer import send_postscript_to_printer
 
     # Processing
     the_list = ItemList(log, "shopping")
@@ -25,6 +26,7 @@ def shopping(args, cfg_i18n, log):
             return cfg_i18n["OK"]
         else:
             return cfg_i18n["ERRORS"][code]
+
     elif action.lower() == "get":
         items = the_list.get_as_list()
         if items != []:
@@ -33,3 +35,13 @@ def shopping(args, cfg_i18n, log):
             items = cfg_i18n["EMPTY_LIST"]
         return items
     
+    elif action.lower() == "print":
+        if (len(args) >= 2):
+            title = " ".join(args[1:])
+        else:
+            title = ""
+        data = the_list.generate_postscript(title)
+        if send_postscript_to_printer(log, data):
+            return cfg_i18n["OK"]
+        else:
+            return cfg_i18n["ERRORS"]["PRINTING_ERROR"]
