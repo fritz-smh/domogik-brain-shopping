@@ -49,6 +49,11 @@
 + (imprime)@premierGroupe la liste de@s course@s
 @ shopping print Liste des courses
 
+// pour usage avec @peuxTu
++ la liste de@s course@s
+@ shopping get
+
+
 
 // ********************** Topic ************************
 // Un topic est un mode de conversation fermé.
