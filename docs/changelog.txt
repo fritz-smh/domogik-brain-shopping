@@ -2,6 +2,11 @@
 Changelog
 =========
 
+1.2
+===
+
+* Small improvment for can_you feature (fr_Fr)
+
 1.1
 ===
 
